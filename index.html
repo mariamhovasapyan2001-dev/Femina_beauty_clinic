@@ -85,7 +85,7 @@ h1, h2, h3 {
   border-color: var(--beige);
 }
 
-/* Վերևի մոխրագույն հատված */
+/* Վերևի հատված */
 
 .topbar {
   background: var(--gray);
@@ -494,6 +494,7 @@ nav {
   color: var(--ink);
   cursor: pointer;
   font-size: 12px;
+  font-family: inherit;
 }
 
 .faq-symbol {
@@ -681,14 +682,27 @@ footer li {
 /* Հարմարեցում հեռախոսներին */
 
 @media (max-width: 1000px) {
-  .nav-links { gap: 12px; }
-  .nav-links a { font-size: 10px; }
-  .service-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 760px) {
-  .menu-toggle { display: block; }
+  .menu-toggle {
+    display: block;
+  }
 
   .nav-links {
     display: none;
@@ -703,7 +717,9 @@ footer li {
     border-bottom: 1px solid var(--line);
   }
 
-  .nav-links.open { display: flex; }
+  .nav-links.open {
+    display: flex;
+  }
 
   .nav-links a {
     display: block;
@@ -718,24 +734,47 @@ footer li {
     grid-template-columns: 1fr;
   }
 
-  .hero-grid { gap: 30px; }
-  .hero-image-wrap { min-height: 380px; }
+  .hero-grid {
+    gap: 30px;
+  }
+
+  .hero-image-wrap {
+    min-height: 380px;
+  }
+
   .hero-image {
     inset: 0 0 20px 20px;
     width: calc(100% - 20px);
     height: calc(100% - 20px);
   }
-  .section { padding: 60px 0; }
-  .about-grid, .faq-grid, .contact-grid { gap: 30px; }
-  .about-image-wrap { height: 370px; }
-  .value-grid { grid-template-columns: 1fr; }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .about-grid,
+  .faq-grid,
+  .contact-grid {
+    gap: 30px;
+  }
+
+  .about-image-wrap {
+    height: 370px;
+  }
+
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
 
   .booking-inner {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .contact h2, .faq h2 { font-size: 32px; }
+  .contact h2,
+  .faq h2 {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -753,8 +792,14 @@ footer li {
     gap: 0;
   }
 
-  .contact-form { padding: 20px; }
-  .hero-actions .btn { width: 100%; text-align: center; }
+  .contact-form {
+    padding: 20px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>
 </head>
@@ -763,8 +808,8 @@ footer li {
 
 <div class="topbar">
   <div class="container topbar-inner">
-    <span>☎ +374 XX XXX XXX</span>
-    <span>⌖ Երևան, Հայաստան</span>
+    <span>☎ <a href="tel:+37455656667">+374 55 65 66 67</a></span>
+    <span>⌖ Արտաշատ, Երևանյան 9</span>
     <span>FEMINA · ԳԵՂԵՑԿՈՒԹՅԱՆ ԿԵՆՏՐՈՆ</span>
   </div>
 </div>
@@ -779,7 +824,7 @@ footer li {
       </span>
     </a>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Բացել մենյուն">☰</button>
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Գլխավոր</a></li>
@@ -1114,12 +1159,19 @@ footer li {
 
       <div class="contact-line">
         <span>ՀԵՌԱԽՈՍ</span>
-        <strong>+374 XX XXX XXX</strong>
+        <strong>
+          <a href="tel:+37455656667">+374 55 65 66 67</a>
+        </strong>
       </div>
 
       <div class="contact-line">
         <span>ՀԱՍՑԵ</span>
-        <strong>Ավելացրեք կենտրոնի իրական հասցեն</strong>
+        <strong>
+          <a href="https://www.google.com/maps/search/?api=1&query=Արտաշատ%2C%20Երևանյան%209"
+             target="_blank" rel="noopener">
+            Արտաշատ, Երևանյան 9 ↗
+          </a>
+        </strong>
       </div>
 
       <div class="contact-line">
@@ -1209,6 +1261,7 @@ footer li {
   <div class="container">
 
     <div class="footer-grid">
+
       <div>
         <a class="logo" href="#home">
           <span class="logo-circle">F</span>
@@ -1217,6 +1270,7 @@ footer li {
             <span class="logo-sub">ԿՈՍՄԵՏՈԼՈԳԻԱԿԱՆ ԿԵՆՏՐՈՆ</span>
           </span>
         </a>
+
         <p style="margin-top:15px">
           Ձեր գեղեցկության և ինքնախնամքի համար ստեղծված տարածք։
         </p>
@@ -1244,10 +1298,20 @@ footer li {
 
       <div>
         <h3>ԿԱՊ</h3>
-        <p>Հեռախոս՝ ավելացնել համարը</p>
-        <p>Հասցե՝ ավելացնել հասցեն</p>
+        <p>
+          Հեռախոս՝
+          <a href="tel:+37455656667">+374 55 65 66 67</a>
+        </p>
+        <p>
+          Հասցե՝
+          <a href="https://www.google.com/maps/search/?api=1&query=Արտաշատ%2C%20Երևանյան%209"
+             target="_blank" rel="noopener">
+            Արտաշատ, Երևանյան 9
+          </a>
+        </p>
         <p><a href="#contact">Գրանցվել այցի ↗</a></p>
       </div>
+
     </div>
 
     <div class="footer-bottom">
@@ -1260,11 +1324,13 @@ footer li {
 
 <script>
 /* Բջջային մենյու */
+
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("open");
+
   menuToggle.textContent =
     navLinks.classList.contains("open") ? "×" : "☰";
 });
@@ -1277,17 +1343,22 @@ navLinks.querySelectorAll("a").forEach(link => {
 });
 
 /* Հաճախ տրվող հարցեր */
+
 document.querySelectorAll(".faq-question").forEach(button => {
   button.addEventListener("click", () => {
     const item = button.closest(".faq-item");
+
     item.classList.toggle("active");
+
     const symbol = button.querySelector(".faq-symbol");
+
     symbol.textContent =
       item.classList.contains("active") ? "−" : "+";
   });
 });
 
 /* Ծառայության ընտրություն */
+
 document.querySelectorAll("[data-service]").forEach(link => {
   link.addEventListener("click", () => {
     document.getElementById("service").value =
@@ -1296,14 +1367,15 @@ document.querySelectorAll("[data-service]").forEach(link => {
 });
 
 /* Ընթացիկ տարին */
+
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
 /* Գրանցման ձև */
+
 document.getElementById("bookingForm").addEventListener("submit", event => {
   event.preventDefault();
 
-  const form = event.currentTarget;
   const name = document.getElementById("name").value;
   const status = document.getElementById("formStatus");
 
